@@ -76,15 +76,28 @@ int _tmain(int argc, _TCHAR* argv[])
 	//преобразование UNICODE строки в ANSI
 	wchar_t* strUNICODE = L"Строка UNICODE";
 	//использование функции WideCharToMultiByte
-	length = wcslen(strUNICODE) + 1;
+	length = wcslen(strUNICODE)+1;
+	cout << "Length=" << length<<endl;
 	char *ptr1 = new char[length];
 	WideCharToMultiByte(CP_ACP, 0, strUNICODE, -1, ptr1, length, 0, 0);
-	//ptr1[length] = '\0';
 	wcout << "UNICODE:" <<strUNICODE  << endl;
 	cout << "ANSI:" << ptr1 << endl;
 	delete[] ptr1;
 
-	//
+	//использование функции wcstombs
+	wchar_t buffer2[] = L"wcstombs converts Unicode-string to ANSI-string";
+	// Определим размер памяти, необходимый для хранения преобразованной ANSI-строки
+	length1 = wcslen(buffer2)+1;
+	ptr1 = new char[length1];
+	// конвертируем Unicode-строку в ANSI-строку 
+	wcstombs_s(&convertedChars, ptr1, length1, buffer2, _TRUNCATE);
+	wcout << "UNICODE:" << buffer2 << endl;
+	cout << "ANSI:" << ptr1 << endl;
+	delete[] ptr1;
+
+
+
+
 
 
 

@@ -17,7 +17,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hIprev, LPTSTR lpCmdLine, in
 		if (n1 == number)
 		{
 			wsprintf(str, L"Ёто число %d", n1);
-			otvet = MessageBox(NULL, str, _T("”гадайц число"), MB_OKCANCEL | MB_ICONINFORMATION);
+			otvet = MessageBox(NULL, str, _T("”гадай число"), MB_OKCANCEL | MB_ICONINFORMATION);
 			break;
 		}
 		else

@@ -25,7 +25,6 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	UNREFERENCED_PARAMETER(hPrevInstance);
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
-	MessageBox
  	// TODO: разместите код здесь.
 	MSG msg;
 	HACCEL hAccelTable;
@@ -176,7 +175,7 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 		{
 			EndDialog(hDlg, LOWORD(wParam));
 			return (INT_PTR)TRUE;
-		}                                
+		}
 		break;
 	}
 	return (INT_PTR)FALSE;
